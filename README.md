@@ -19,14 +19,14 @@ One command for each agent — the skill is plain Markdown plus a script, so not
 
 ```bash
 # Claude Code (plugin, stays updatable)
-claude plugin marketplace add ibrahimbdr/appit-skills
+claude plugin marketplace add Appit-labs/appit-skills
 claude plugin install blender-pipeline@appit-skills
 
 # pi
-pi install git:github.com/ibrahimbdr/blender-pipeline
+pi install git:github.com/Appit-labs/blender-pipeline
 
 # any agent that reads a skills directory
-git clone git@github.com:ibrahimbdr/blender-pipeline.git
+git clone git@github.com:Appit-labs/blender-pipeline.git
 cp -r blender-pipeline/skills/blender-pipeline ~/.claude/skills/      # or ~/.codex/skills/, .cursor/skills/, …
 ```
 
@@ -73,7 +73,7 @@ network destination at runtime.
 ## Part of the Appit collection
 
 Browser QA · CI triage · Postgres · runbooks · SSH · Trello · cloud browsers · OpenDesign · Blender —
-one marketplace: [appit-skills](https://github.com/ibrahimbdr/appit-skills).
+one marketplace: [appit-skills](https://github.com/Appit-labs/appit-skills).
 
 ## License
 
