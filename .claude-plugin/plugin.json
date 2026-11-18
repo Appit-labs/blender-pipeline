@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "description": "Blockout \u2192 shade \u2192 light \u2192 render \u2192 export for Blender via MCP, with eight specialist playbooks behind one router.",
   "author": {
-    "name": "Appit Labs",
-    "url": "https://github.com/Appit-labs"
+    "name": "Ibrahim M. Badr",
+    "url": "https://github.com/ibrahimbdr"
   },
   "homepage": "https://github.com/Appit-labs/blender-pipeline",
   "license": "MIT",
