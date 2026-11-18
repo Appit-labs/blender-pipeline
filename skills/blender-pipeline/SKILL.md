@@ -30,8 +30,36 @@ SKILL_DIR=~/.claude/skills/blender-pipeline     # or ~/.codex/skills/…, ~/.pi/
 1. **Blender** running as a GUI process (tested on 5.3; background mode has no
    viewport, so `look` and some operators fail).
 2. The **Blender MCP add-on** enabled in that session, socket on `127.0.0.1:9876`.
-   Check with `get_addon_status` before anything else — if every call returns
-   "Could not connect to Blender", the app is not running or the add-on is off.
+3. The **MCP bridge** registered with the agent (see below) — the add-on alone is not
+   enough; something has to expose it to the model.
+
+## Run the bridge — once per machine
+
+Three moving parts, and the failures are indistinguishable until you check each in order:
+
+```bash
+# 1. the add-on lives in Blender: Preferences -> Add-ons -> install the MCP add-on, enable it,
+#    then "Start MCP server". Verify from a shell that the socket exists:
+ss -ltn | grep 9876          # must show 127.0.0.1:9876
+
+# 2. the bridge, a small Python process the agent talks to (uvx keeps it isolated):
+uv tool uvx --python 3.11 mcp-for-blender
+
+# 3. registration: the agent's MCP config points at that bridge
+#    (pi: ~/.pi/agent/mcp.json, Claude Code: .mcp.json, Codex: its own mcp settings)
+```
+
+Then check the whole chain with one call — `get_addon_status`. It answers three different
+failures differently, so read the text, not just the call:
+
+| Answer | Meaning | Fix |
+| --- | --- | --- |
+| `Could not connect to Blender` | add-on off, or Blender not running | start Blender, enable the add-on, start its server |
+| `up_to_date: false` with `protocol_version` < `expected_protocol_version` | the add-on is older than the bridge | update the add-on in Blender; most calls still work, newer ones do not |
+| capability list present | ready | proceed |
+
+`Blender` is closed? Every call fails with the first row — that is a missing prerequisite, not
+a modelling problem.
 3. Scene set up before modeling: unit scale **Metric, 1.0**, clip end large enough
    for the asset, and a collection per asset.
 4. For engine targets, the exporter of that engine known: Unity wants Y-up FBX,

@@ -3,4 +3,8 @@
 version: 2
 scanner_version: 2.12.0
 rules: []
-fingerprints: []
+fingerprints:
+- hash: sha256:73b720cd142a70f1dc23037fca93d6624c7b1b65d558ee85cc9cc753d9a45c3d
+  rule_id: RP1
+  file: SKILL.md
+  reason: Accepted finding (auto-generated baseline)
