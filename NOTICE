@@ -1,0 +1,9 @@
+This package bundles the Blender Skills playbooks by arjun988.
+
+  Upstream: https://github.com/arjun988/blender-skills
+  License:  MIT (Copyright (c) arjun988)
+  Files:    skills/blender-pipeline/references/*.md
+
+The router (SKILL.md), prerequisites, invariants and reporting rules are
+original work. Upstream remains the source of truth for the playbooks; if you
+want the full 94-skill pack, install it from the upstream repository.

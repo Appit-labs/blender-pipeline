@@ -1,0 +1,18 @@
+{
+  "skill": "blender-pipeline",
+  "out": "blender-pipeline/demo.gif",
+  "caption": "blender-pipeline \u2014 one router, eight playbooks",
+  "steps": [
+    {
+      "cmd": "execute_blender_code / get_scene_info",
+      "phase": "scene",
+      "out": [
+        "Code executed successfully: units: METRIC 1.0",
+        "added: Icosphere verts: 42 mods: ['SUBSURF']",
+        "Scene | 1 camera, 1 light, 2 meshes | active Icosphere"
+      ]
+    }
+  ],
+  "image": "blender-pipeline/viewport.png",
+  "image_caption": "look \u2192 the real viewport, not a claim"
+}

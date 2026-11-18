@@ -1,0 +1,27 @@
+{
+  "name": "blender-pipeline",
+  "version": "0.1.0",
+  "description": "Blockout \u2192 shade \u2192 light \u2192 render \u2192 export for Blender via MCP, with eight specialist playbooks behind one router.",
+  "license": "MIT",
+  "keywords": [
+    "agent-skill",
+    "pi-package",
+    "claude-code-plugin",
+    "codex-skill"
+  ],
+  "pi": {
+    "skills": [
+      "./skills"
+    ]
+  },
+  "files": [
+    "skills",
+    "README.md",
+    "LICENSE",
+    "NOTICE"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ibrahimbdr/blender-pipeline.git"
+  }
+}
