@@ -1,6 +1,6 @@
 {
-  "name": "blender-pipeline",
-  "version": "0.1.1",
+  "name": "@appitlabs/blender-pipeline",
+  "version": "0.1.2",
   "description": "Blockout \u2192 shade \u2192 light \u2192 render \u2192 export for Blender via MCP, with eight specialist playbooks behind one router.",
   "license": "MIT",
   "keywords": [
@@ -33,5 +33,9 @@
       "name": "Appit Labs",
       "url": "https://github.com/Appit-Labs"
     }
-  ]
+  ],
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  }
 }
