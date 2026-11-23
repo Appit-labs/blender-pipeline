@@ -4,6 +4,7 @@ description: Model, shade, light, and export a Blender asset through a live Blen
 allowed-tools:
   - Read
   - Bash
+license: MIT
 ---
 
 # Blender pipeline
@@ -13,6 +14,8 @@ One entry point for Blender work. Eight specialist playbooks live in
 
 Follows the upstream **Blender Skills** pack by
 [arjun988](https://github.com/arjun988/blender-skills) (MIT, see `NOTICE`).
+
+**Not for:** 2D image generation, or rigging/animation work in an engine — this assumes a live Blender session and ends with an asset you import somewhere else.
 
 ## Portability
 
